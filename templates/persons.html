@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+
+
+
+
+{% block content %}
+  <a class="btn btn-info" href="/persons/add/"> 
+    Adicionar
+  </a>
+  <br>
+  <br>
+<div class="card mb-3">
+    
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+              Data Table Example</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th> ID </th>
+                      <th>Name</th>
+                      <th>Sobrenome</th>
+                      <th>Idade</th>
+                       <th>Opções</th>
+                      
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th> ID </th>
+                      <th>Name</th>
+                       <th>Sobrenome</th>
+                      <th>Idadae</th>
+                      <th>Opções</th>
+
+
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                   
+                    {% for l in lista %}
+                     <tr>
+                      <td>{{l.id}}</td>
+                      <td>{{l.first_name}}</td>
+                       <td>{{l.last_name}}</td>
+                      <td>{{l.age}}</td>
+                      <td> 
+                        <a class="btn btn-success  "  
+                        href="/persons/{{l.id}}/edit/"> 
+                          Editar
+                        </a>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                   
+                 
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          </div>
+
+{% endblock %}
+
+
+
+
+

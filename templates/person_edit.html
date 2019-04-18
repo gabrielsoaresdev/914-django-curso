@@ -1,0 +1,25 @@
+
+
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<h5> {{ title }} </h5>
+<form action="" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  Primeiro nome: <input type="text" 
+  	name="first_name" value='{{ person.first_name}}'><br>
+  Sobrenome: <input type="text" 
+  	name="last_name" value='{{ person.last_name}}'><br>
+   Idade: <input type="number" 
+   	name="age" value='{{ person.age}}'><br>
+  <input type="submit" value="Salvar">
+</form> 
+
+{% endblock %}
+
+
+
+
+
